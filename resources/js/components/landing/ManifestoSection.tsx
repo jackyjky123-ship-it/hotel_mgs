@@ -1,47 +1,33 @@
 export function ManifestoSection() {
     return (
         <section
-            id="manifesto"
-            className="relative w-full bg-[#0B0D11] text-white px-4 sm:px-8 lg:px-12 py-20 sm:py-28 border-t border-white/[0.06] overflow-hidden"
+            id="editorial-manifesto"
+            className="relative w-full bg-[#EFF1F3] text-[#111317] px-4 sm:px-8 lg:px-12 py-16 sm:py-24 border-t border-[#D6DAE0]/70"
         >
-            {/* Ambient background light */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(245,158,11,0.03)_0%,transparent_70%)] pointer-events-none" />
-
-            <div className="max-w-7xl mx-auto relative z-10">
-                {/* Manifesto Eyebrow Tag */}
-                <div className="flex items-center justify-between mb-8 sm:mb-12 border-b border-white/10 pb-4">
-                    <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-amber-200/90 font-medium">
-                        EDITORIAL MANIFESTO · 01
-                    </span>
-                    <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-500">
-                        SANCTUARY FORM & VISION
-                    </span>
-                </div>
-
-                {/* Staggered Monumental Typography */}
-                <div className="space-y-4 sm:space-y-6 font-display font-bold tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl uppercase select-none leading-[0.95]">
-                    {/* Line 1 */}
-                    <div className="text-white transition-colors duration-500 hover:text-amber-200">
+            <div className="max-w-7xl mx-auto">
+                <div className="space-y-2 sm:space-y-3 font-display font-light tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] uppercase select-none leading-[1.12]">
+                    {/* Line 1 - Dark */}
+                    <div className="text-[#111317] transition-colors duration-300">
                         A MODERN REAL ESTATE PLATFORM,
                     </div>
 
-                    {/* Line 2 - Indented */}
-                    <div className="pl-6 sm:pl-16 md:pl-32 lg:pl-48 text-neutral-300 transition-colors duration-500 hover:text-white">
+                    {/* Line 2 - Dark & Indented */}
+                    <div className="pl-12 sm:pl-28 md:pl-48 lg:pl-64 text-[#111317] transition-colors duration-300">
                         CITY ARCADE INCORPORATES
                     </div>
 
-                    {/* Line 3 */}
-                    <div className="text-neutral-400 transition-colors duration-500 hover:text-neutral-200">
+                    {/* Line 3 - Muted Architectural Slate */}
+                    <div className="text-[#8E95A2] transition-colors duration-300">
                         ADVANCED DIGITAL TOOLS AND
                     </div>
 
-                    {/* Line 4 - Indented */}
-                    <div className="pl-10 sm:pl-24 md:pl-48 lg:pl-64 text-neutral-500 transition-colors duration-500 hover:text-neutral-300">
+                    {/* Line 4 - Muted Architectural Slate & Indented */}
+                    <div className="pl-16 sm:pl-36 md:pl-60 lg:pl-80 text-[#8E95A2] transition-colors duration-300">
                         TRUSTED
                     </div>
 
-                    {/* Line 5 - Further Indented with Amber Glow */}
-                    <div className="pl-14 sm:pl-32 md:pl-64 lg:pl-80 text-amber-200/90 transition-colors duration-500 hover:text-amber-100">
+                    {/* Line 5 - Muted Architectural Slate & Further Indented */}
+                    <div className="pl-24 sm:pl-48 md:pl-76 lg:pl-[28rem] text-[#8E95A2] transition-colors duration-300">
                         LOCAL EXPERTISE
                     </div>
                 </div>

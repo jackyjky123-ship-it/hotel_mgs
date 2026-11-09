@@ -1,4 +1,4 @@
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { Search, User, ArrowUpRight, Bed, Compass, Maximize2 } from 'lucide-react';
 
 interface BrandHeaderSectionProps {
     onOpenEnquiry: () => void;
@@ -7,90 +7,179 @@ interface BrandHeaderSectionProps {
 
 export function BrandHeaderSection({ onOpenEnquiry }: BrandHeaderSectionProps) {
     return (
-        <section id="brand-story" className="relative w-full bg-[#0B0D11] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-24 border-t border-white/[0.06]">
-            {/* Subtle atmospheric ambient glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-radial from-amber-500/[0.04] to-transparent blur-3xl pointer-events-none" />
+        <section className="relative w-full bg-[#EFF1F3] text-[#111317] px-4 sm:px-8 lg:px-12 pt-6 sm:pt-8 pb-16">
+            {/* Top Navigation Bar (exact match to design_ref.png) */}
+            <nav className="max-w-7xl mx-auto flex items-center justify-between pb-8 mb-10 border-b border-[#D6DAE0]/70 text-xs tracking-widest uppercase">
+                {/* Left: Folded Geometric Architectural Logo Mark */}
+                <div className="flex items-center">
+                    <div className="w-6 h-6 flex items-center justify-center text-[#111317]">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.5 19.5L12 4.5L20.5 19.5H3.5Z"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinejoin="round"
+                            />
+                            <path d="M12 4.5V19.5" stroke="currentColor" strokeWidth="2" />
+                        </svg>
+                    </div>
+                </div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
-                {/* SECTION PROLOGUE: Brand Narrative & Key Metrics */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-14 sm:mb-16">
-                    {/* Left Column: Pill Badge + Editorial Narrative */}
-                    <div className="lg:col-span-4">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-300/30 bg-amber-400/5 text-amber-200 text-[10px] uppercase tracking-[0.25em] font-semibold mb-4">
-                            <Sparkles className="w-3 h-3 text-amber-300" />
-                            <span>The Curation · City Arcade</span>
+                {/* Center: Navigation Links with subtle divider dots */}
+                <ul className="hidden md:flex items-center gap-6 text-[10px] font-semibold text-neutral-500 tracking-[0.25em]">
+                    <li>
+                        <a href="#hero-header" className="text-[#111317] font-bold hover:text-black transition-colors">
+                            Home
+                        </a>
+                    </li>
+                    <span className="text-neutral-300 text-[8px]">•</span>
+                    <li>
+                        <a href="#properties" className="hover:text-black transition-colors">
+                            Properties
+                        </a>
+                    </li>
+                    <span className="text-neutral-300 text-[8px]">•</span>
+                    <li>
+                        <a href="#features" className="hover:text-black transition-colors">
+                            Buy
+                        </a>
+                    </li>
+                    <span className="text-neutral-300 text-[8px]">•</span>
+                    <li>
+                        <a href="#features" className="hover:text-black transition-colors">
+                            Rent
+                        </a>
+                    </li>
+                    <span className="text-neutral-300 text-[8px]">•</span>
+                    <li>
+                        <a href="#why-us" className="hover:text-black transition-colors">
+                            Find Agent
+                        </a>
+                    </li>
+                    <span className="text-neutral-300 text-[8px]">•</span>
+                    <li>
+                        <button onClick={onOpenEnquiry} className="hover:text-black transition-colors uppercase">
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+
+                {/* Right: Circular Search Button + Sign In Pill */}
+                <div className="flex items-center gap-3">
+                    <button
+                        onClick={onOpenEnquiry}
+                        className="w-8 h-8 rounded-full bg-[#111317] hover:bg-black text-white flex items-center justify-center transition-all shadow-sm active:scale-95"
+                        aria-label="Search properties"
+                    >
+                        <Search className="w-3.5 h-3.5" />
+                    </button>
+
+                    <a
+                        href="/login"
+                        className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-400 bg-transparent hover:bg-[#111317] hover:text-white hover:border-[#111317] text-[#111317] font-semibold text-[10px] tracking-[0.2em] uppercase transition-all shadow-sm"
+                    >
+                        <User className="w-3 h-3" />
+                        <span>Sign In</span>
+                    </a>
+                </div>
+            </nav>
+
+            {/* GRAND HEADLINE & STATS GRID (exact match to design_ref.png) */}
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
+                    {/* Left Column: Pill Badge + Uppercase Description */}
+                    <div className="lg:col-span-3 pt-2">
+                        <div className="inline-block px-3.5 py-1 rounded-full border border-neutral-350 bg-white/60 text-[9px] uppercase tracking-[0.22em] font-medium text-neutral-700 mb-4 shadow-2xs">
+                            Best Real Estate Agency
                         </div>
-                        <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-white leading-tight mb-4">
-                            Where Sculptural Living Meets Digital Certainty
-                        </h2>
-                        <p className="text-xs text-neutral-400 tracking-wider leading-relaxed font-light uppercase">
-                            City Arcade curates timeless architectural sanctuaries. From cantilevered biophilic terraces to verified smart escrow deeds, we redefine luxury living.
+                        <p className="text-[10px] text-neutral-500 uppercase tracking-[0.16em] leading-relaxed font-normal max-w-[230px]">
+                            Find your dream home, explore premium properties, and invest with confidence through City Arcade, your trusted partner in modern real estate.
                         </p>
                     </div>
 
-                    {/* Center Column: Grand Monogram Visual Accent */}
-                    <div className="lg:col-span-4 text-center lg:text-left flex flex-col justify-end">
-                        <div className="inline-block">
-                            <span className="block font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-[-0.03em] uppercase text-white/90 leading-none">
-                                CITY
-                            </span>
-                            <span className="block font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-[-0.03em] uppercase text-white/40 leading-none">
-                                ARCADE
-                            </span>
-                        </div>
+                    {/* Center Column: Elegant Tall "CITY ARCADE" Typography (Light/Regular weight as in design_ref) */}
+                    <div className="lg:col-span-6 text-center lg:text-left">
+                        <h1 className="font-display font-light tracking-[-0.01em] leading-[0.88] text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] text-[#111317] uppercase select-none">
+                            <span className="block font-light">CITY</span>
+                            <span className="block font-light">ARCADE</span>
+                        </h1>
                     </div>
 
-                    {/* Right Column: Key Distinction Metrics in Frosted Glass Cards */}
-                    <div className="lg:col-span-4 grid grid-cols-3 gap-3 sm:gap-4">
-                        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-center backdrop-blur-sm">
-                            <div className="font-display font-bold text-2xl sm:text-3xl text-amber-200 tracking-tight">
-                                10K+
+                    {/* Right Column: Key Statistics (Vertical stack matching design_ref) */}
+                    <div className="lg:col-span-3 flex lg:flex-col justify-between sm:justify-around lg:justify-start gap-5 lg:items-end text-right pt-2">
+                        {/* Stat 1 */}
+                        <div className="text-left lg:text-right">
+                            <div className="font-display font-light text-3xl sm:text-4xl text-[#111317] tracking-tight">
+                                10K
                             </div>
-                            <div className="text-[9px] uppercase tracking-[0.18em] text-neutral-400 font-medium mt-1">
-                                Residents
-                            </div>
-                        </div>
-
-                        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-center backdrop-blur-sm">
-                            <div className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
-                                5K+
-                            </div>
-                            <div className="text-[9px] uppercase tracking-[0.18em] text-neutral-400 font-medium mt-1">
-                                Properties
+                            <div className="text-[9px] uppercase tracking-[0.22em] text-neutral-500 font-medium mt-0.5">
+                                Happy Clients
                             </div>
                         </div>
 
-                        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 text-center backdrop-blur-sm">
-                            <div className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                        {/* Stat 2 */}
+                        <div className="text-left lg:text-right">
+                            <div className="font-display font-light text-3xl sm:text-4xl text-[#111317] tracking-tight">
+                                5K
+                            </div>
+                            <div className="text-[9px] uppercase tracking-[0.22em] text-neutral-500 font-medium mt-0.5">
+                                Properties Sold
+                            </div>
+                        </div>
+
+                        {/* Stat 3 */}
+                        <div className="text-left lg:text-right">
+                            <div className="font-display font-light text-3xl sm:text-4xl text-[#111317] tracking-tight">
                                 15+
                             </div>
-                            <div className="text-[9px] uppercase tracking-[0.18em] text-neutral-400 font-medium mt-1">
-                                Citations
+                            <div className="text-[9px] uppercase tracking-[0.22em] text-neutral-500 font-medium mt-0.5">
+                                Cities Covered
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* ARCHITECTURAL MODULAR BUILDING SHOWCASE (Clean, Unblemished Image) */}
-                <div
-                    onClick={onOpenEnquiry}
-                    className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#11141D] border border-white/10 shadow-2xl group cursor-pointer"
-                >
-                    <img
-                        src="/images/modular_building_clean.png"
-                        alt="City Arcade Modular Glass Cube Architecture"
-                        className="w-full h-[280px] sm:h-[400px] md:h-[480px] object-cover object-center group-hover:scale-102 transition-transform duration-700 ease-out brightness-95 group-hover:brightness-105"
-                    />
+                {/* 3D HOTEL NIGHT ARCHITECTURAL HERO (SYNCHRONIZED CONTAINER & IMAGE) */}
+                <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0A0D12] border border-[#CCD1D8] shadow-2xl group">
+                    {/* Container aspect ratio strictly matches 16:9 (1024x572) so the image fills the container seamlessly without black letterbox or pillarbox bars */}
+                    <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#0A0D12] flex items-center justify-center">
+                        {/* Night atmosphere radial ambient glow */}
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(32,45,60,0.5)_0%,rgba(10,13,18,0.98)_85%)] pointer-events-none" />
 
-                    {/* Vignette Gradients */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
+                        {/* 3D Hotel Night: fills container 100% edge-to-edge, uncropped and uncompressed */}
+                        <img
+                            src="/images/3d_hotel_night.png"
+                            alt="City Arcade 3D Hotel Night Architecture"
+                            className="w-full h-full object-cover object-center relative z-10 transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                        />
 
-                    {/* Bottom-left Pill Badge (Clean interactive trigger) */}
-                    <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-7 z-10">
-                        <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-xl border border-white/20 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-xl transition-all">
-                            <span>Modular Cantilevered Architecture · City Arcade</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 text-amber-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        {/* Subtle atmospheric vignette for contrast and grounded badges */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none z-15" />
+
+                        {/* Bottom-left Pill Badge (exact match to design_ref.png) */}
+                        <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-20">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2 rounded-full bg-white/95 backdrop-blur-md border border-neutral-300 text-[9px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-neutral-900 shadow-md">
+                                <span>Future of living with City Arcade</span>
+                                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-700" />
+                            </div>
+                        </div>
+
+                        {/* Right: Architectural Specifications Capsule */}
+                        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 hidden md:flex items-center gap-4 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-neutral-200 text-[10px] uppercase tracking-wider font-medium shadow-lg">
+                            <div className="flex items-center gap-1.5">
+                                <Bed className="w-3 h-3 text-neutral-400" />
+                                <span>6 Bedrooms</span>
+                            </div>
+                            <span className="h-3 w-px bg-white/20" />
+                            <div className="flex items-center gap-1.5">
+                                <Compass className="w-3 h-3 text-neutral-400" />
+                                <span>91,332 Sqft Plot</span>
+                            </div>
+                            <span className="h-3 w-px bg-white/20" />
+                            <div className="flex items-center gap-1.5">
+                                <Maximize2 className="w-3 h-3 text-neutral-400" />
+                                <span>16,017 Sqft Floorplan</span>
+                            </div>
                         </div>
                     </div>
                 </div>

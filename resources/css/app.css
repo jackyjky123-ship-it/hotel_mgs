@@ -12,6 +12,7 @@
         'Plus Jakarta Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+    --font-serif: 'Playfair Display', 'Cinzel', Georgia, serif;
     --font-display: 'Syne', sans-serif;
     --font-grotesk: 'Space Grotesk', sans-serif;
     --font-luxury: 'Cinzel', serif;

@@ -1,161 +1,120 @@
-import { useState } from 'react';
-import { Check, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowUp, Sparkles, Building2 } from 'lucide-react';
 
-export function ArchitecturalFooter() {
-    const [email, setEmail] = useState('');
-    const [isSubscribed, setIsSubscribed] = useState(false);
+interface ArchitecturalFooterProps {
+    onFindBookingClick?: () => void;
+    onContactClick?: () => void;
+}
 
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email) {
-            setIsSubscribed(true);
-            setTimeout(() => {
-                setIsSubscribed(false);
-                setEmail('');
-            }, 3000);
-        }
+export function ArchitecturalFooter({ onFindBookingClick, onContactClick }: ArchitecturalFooterProps) {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        <footer className="relative w-full bg-[#080A0E] text-white px-4 sm:px-8 lg:px-12 pt-16 pb-12 border-t border-white/[0.08]">
-            <div className="max-w-7xl mx-auto">
-                {/* Top Row: Brand & Newsletter */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/[0.08]">
-                    {/* Brand Col */}
-                    <div className="lg:col-span-5">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-lg bg-[#E5DBC7] text-[#080A0E] flex items-center justify-center font-display font-black text-sm shadow-sm">
-                                C
+        <footer className="w-full bg-[#100E0C] text-[#F3EFEA] border-t border-[#231F1C] pt-16 pb-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Main Row */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.08]">
+                    {/* Brand & Tagline */}
+                    <div className="md:col-span-5 space-y-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4A373] to-[#A87243] text-[#141210] flex items-center justify-center font-serif font-bold text-xl shadow-lg border border-white/20">
+                                P
                             </div>
                             <div>
-                                <span className="font-luxury font-bold tracking-[0.25em] text-base text-white block">
-                                    AMĀLI ISLAND
+                                <span className="font-serif text-xl font-bold tracking-wide text-white block">
+                                    PuKy Boutique Hotel
                                 </span>
-                                <span className="font-mono text-[9px] tracking-[0.25em] text-amber-200/80 uppercase block">
-                                    CITY ARCADE RESIDENCES
+                                <span className="text-[10px] tracking-[0.2em] uppercase text-[#D4A373] block font-mono">
+                                    A Quiet Corner of Cambodia
                                 </span>
                             </div>
                         </div>
-                        <p className="text-xs text-neutral-400 font-light leading-relaxed max-w-sm mb-6">
-                            A curated convergence of biophilic architectural design, bespoke hospitality, and modern real estate investment.
+                        <p className="text-sm text-[#B8AFA2] font-light max-w-sm leading-relaxed">
+                            A curated boutique hotel in Daun Penh, Phnom Penh, blending biophilic cantilevered architecture with authentic warm Cambodian hospitality.
                         </p>
-                        <div className="text-[10px] text-neutral-500 font-mono tracking-wider">
-                            COORDINATES: 25.1972° N, 55.2744° E · SANCTUARY BAY
-                        </div>
                     </div>
 
-                    {/* Quick Links Col */}
-                    <div className="lg:col-span-3 grid grid-cols-2 gap-8 text-xs tracking-widest uppercase">
-                        <div>
-                            <h4 className="text-[10px] text-neutral-500 font-mono tracking-[0.25em] mb-4">
-                                Residences
-                            </h4>
-                            <ul className="space-y-3 text-neutral-400 font-medium text-[11px]">
-                                <li>
-                                    <a href="#hero" className="hover:text-white transition-colors">
-                                        Villa Aurora
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#hero" className="hover:text-white transition-colors">
-                                        Villa Aria
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#hero" className="hover:text-white transition-colors">
-                                        The Monolith
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#features" className="hover:text-white transition-colors">
-                                        Modular Suites
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 className="text-[10px] text-neutral-500 font-mono tracking-[0.25em] mb-4">
-                                Platform
-                            </h4>
-                            <ul className="space-y-3 text-neutral-400 font-medium text-[11px]">
-                                <li>
-                                    <a href="#features" className="hover:text-white transition-colors">
-                                        Pro Listings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#manifesto" className="hover:text-white transition-colors">
-                                        Philosophy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#brand-story" className="hover:text-white transition-colors">
-                                        Curation
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#why-us" className="hover:text-white transition-colors">
-                                        Why Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/login" className="text-amber-200/90 hover:text-white transition-colors">
-                                        Client Portal
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    {/* Navigation Links */}
+                    <div className="md:col-span-3 space-y-3">
+                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#D4A373] block mb-2 font-semibold">
+                            Quick Links
+                        </span>
+                        <ul className="space-y-2 text-sm text-[#D5CEBF]">
+                            <li>
+                                <a href="#rooms" className="hover:text-white transition-colors">
+                                    Rooms & Suites
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#amenities" className="hover:text-white transition-colors">
+                                    Amenities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#addons" className="hover:text-white transition-colors">
+                                    Add-ons & Extras
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#payments" className="hover:text-white transition-colors">
+                                    Bakong KHQR Payments
+                                </a>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={onFindBookingClick}
+                                    className="hover:text-white transition-colors text-left"
+                                >
+                                    Find My Booking
+                                </button>
+                            </li>
+                        </ul>
                     </div>
 
-                    {/* Newsletter Col */}
-                    <div className="lg:col-span-4">
-                        <h4 className="text-[10px] text-neutral-400 font-mono tracking-[0.25em] uppercase mb-2">
-                            Architectural Dispatch
-                        </h4>
-                        <p className="text-xs text-neutral-400 font-light mb-4">
-                            Receive private invitations to confidential off-market architectural reveals and seasonal suites.
-                        </p>
-                        <form onSubmit={handleSubscribe} className="relative">
-                            <input
-                                type="email"
-                                required
-                                placeholder="Enter your private email..."
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full pl-4 pr-12 py-3 rounded-full bg-white/[0.04] border border-white/15 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-amber-300/50 transition-all"
-                            />
-                            <button
-                                type="submit"
-                                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#E5DBC7] text-[#121316] flex items-center justify-center hover:bg-white transition-colors"
-                                aria-label="Subscribe"
-                            >
-                                {isSubscribed ? <Check className="w-3.5 h-3.5" /> : <Send className="w-3.5 h-3.5" />}
-                            </button>
-                        </form>
-                        {isSubscribed && (
-                            <p className="text-[10px] text-emerald-400 font-medium mt-2 tracking-wider uppercase">
-                                ✓ You are subscribed to private architectural releases.
-                            </p>
-                        )}
+                    {/* Contact Details */}
+                    <div className="md:col-span-4 space-y-3">
+                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#D4A373] block mb-2 font-semibold">
+                            Contact & Location
+                        </span>
+                        <div className="space-y-3 text-xs sm:text-sm text-[#B8AFA2]">
+                            <div className="flex items-start gap-2.5">
+                                <MapPin className="w-4 h-4 text-[#C29062] shrink-0 mt-0.5" />
+                                <span>Street 240, Daun Penh, Phnom Penh, Cambodia</span>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                                <Phone className="w-4 h-4 text-[#C29062] shrink-0" />
+                                <a href="tel:+85523999888" className="hover:text-white transition-colors font-mono">
+                                    +855 23 999 888
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                                <Mail className="w-4 h-4 text-[#C29062] shrink-0" />
+                                <a href="mailto:stay@pukyboutique.com" className="hover:text-white transition-colors font-mono">
+                                    stay@pukyboutique.com
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Bottom Row: Legal & Copyright */}
-                <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-neutral-500 uppercase tracking-widest font-mono">
-                    <div>
-                        © {new Date().getFullYear()} CITY ARCADE · AMĀLI ISLAND. ALL RIGHTS RESERVED.
+                {/* Bottom Row & Khmer Sign-Off */}
+                <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C8377]">
+                    {/* Khmer Sign-off from requirements */}
+                    <div className="text-sm sm:text-base font-serif text-[#D4A373]">
+                        អរគុណ · Thank you for choosing to stay with us.
                     </div>
-                    <div className="flex items-center gap-6">
-                        <a href="#" className="hover:text-neutral-300 transition-colors">
-                            Privacy Policy
-                        </a>
-                        <a href="#" className="hover:text-neutral-300 transition-colors">
-                            Terms of Service
-                        </a>
-                        <a href="#" className="hover:text-neutral-300 transition-colors">
-                            Security & Escrow
-                        </a>
+
+                    <div className="flex items-center gap-4">
+                        <span>© 2026 PuKy Boutique Hotel. All rights reserved.</span>
+                        <button
+                            onClick={scrollToTop}
+                            className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-white transition-colors flex items-center gap-1.5"
+                            aria-label="Scroll to top"
+                        >
+                            <ArrowUp className="w-4 h-4" />
+                            <span className="text-[11px] font-mono">Top</span>
+                        </button>
                     </div>
                 </div>
             </div>
