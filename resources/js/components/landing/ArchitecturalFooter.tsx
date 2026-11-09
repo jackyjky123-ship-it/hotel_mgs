@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Check, Send } from 'lucide-react';
+import { Check, Send } from 'lucide-react';
 
 export function ArchitecturalFooter() {
     const [email, setEmail] = useState('');
@@ -17,24 +17,29 @@ export function ArchitecturalFooter() {
     };
 
     return (
-        <footer className="relative w-full bg-[#0C0E12] text-white px-4 sm:px-8 lg:px-12 pt-16 pb-12 border-t border-white/10">
+        <footer className="relative w-full bg-[#080A0E] text-white px-4 sm:px-8 lg:px-12 pt-16 pb-12 border-t border-white/[0.08]">
             <div className="max-w-7xl mx-auto">
                 {/* Top Row: Brand & Newsletter */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/[0.08]">
                     {/* Brand Col */}
                     <div className="lg:col-span-5">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-sm bg-white text-[#0C0E12] flex items-center justify-center font-display font-black text-sm">
+                            <div className="w-8 h-8 rounded-lg bg-[#E5DBC7] text-[#080A0E] flex items-center justify-center font-display font-black text-sm shadow-sm">
                                 C
                             </div>
-                            <span className="font-display font-bold tracking-[0.25em] text-base text-white">
-                                CITY ARCADE
-                            </span>
+                            <div>
+                                <span className="font-luxury font-bold tracking-[0.25em] text-base text-white block">
+                                    AMĀLI ISLAND
+                                </span>
+                                <span className="font-mono text-[9px] tracking-[0.25em] text-amber-200/80 uppercase block">
+                                    CITY ARCADE RESIDENCES
+                                </span>
+                            </div>
                         </div>
                         <p className="text-xs text-neutral-400 font-light leading-relaxed max-w-sm mb-6">
                             A curated convergence of biophilic architectural design, bespoke hospitality, and modern real estate investment.
                         </p>
-                        <div className="text-[11px] text-neutral-500 font-mono tracking-wider">
+                        <div className="text-[10px] text-neutral-500 font-mono tracking-wider">
                             COORDINATES: 25.1972° N, 55.2744° E · SANCTUARY BAY
                         </div>
                     </div>
@@ -45,7 +50,7 @@ export function ArchitecturalFooter() {
                             <h4 className="text-[10px] text-neutral-500 font-mono tracking-[0.25em] mb-4">
                                 Residences
                             </h4>
-                            <ul className="space-y-3 text-neutral-300 font-medium">
+                            <ul className="space-y-3 text-neutral-400 font-medium text-[11px]">
                                 <li>
                                     <a href="#hero" className="hover:text-white transition-colors">
                                         Villa Aurora
@@ -62,8 +67,8 @@ export function ArchitecturalFooter() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#properties" className="hover:text-white transition-colors">
-                                        Penthouse Sky
+                                    <a href="#features" className="hover:text-white transition-colors">
+                                        Modular Suites
                                     </a>
                                 </li>
                             </ul>
@@ -73,7 +78,7 @@ export function ArchitecturalFooter() {
                             <h4 className="text-[10px] text-neutral-500 font-mono tracking-[0.25em] mb-4">
                                 Platform
                             </h4>
-                            <ul className="space-y-3 text-neutral-300 font-medium">
+                            <ul className="space-y-3 text-neutral-400 font-medium text-[11px]">
                                 <li>
                                     <a href="#features" className="hover:text-white transition-colors">
                                         Pro Listings
@@ -85,12 +90,17 @@ export function ArchitecturalFooter() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#why-us" className="hover:text-white transition-colors">
-                                        Valuations
+                                    <a href="#brand-story" className="hover:text-white transition-colors">
+                                        Curation
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/login" className="hover:text-white transition-colors">
+                                    <a href="#why-us" className="hover:text-white transition-colors">
+                                        Why Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/login" className="text-amber-200/90 hover:text-white transition-colors">
                                         Client Portal
                                     </a>
                                 </li>
@@ -113,7 +123,7 @@ export function ArchitecturalFooter() {
                                 placeholder="Enter your private email..."
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full pl-4 pr-12 py-3 rounded-full bg-white/5 border border-white/15 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white/40 transition-all"
+                                className="w-full pl-4 pr-12 py-3 rounded-full bg-white/[0.04] border border-white/15 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-amber-300/50 transition-all"
                             />
                             <button
                                 type="submit"

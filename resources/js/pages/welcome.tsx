@@ -27,36 +27,36 @@ export default function Welcome() {
             <Head title="AMĀLI ISLAND · City Arcade | Architectural Sanctuary & Modern Real Estate">
                 <meta
                     name="description"
-                    content="Experience the convergence of 3D biophilic architecture and timeless hospitality at AMĀLI Island & City Arcade."
+                    content="Experience the convergence of 3D biophilic architecture, cantilevered suites, and timeless hospitality at AMĀLI Island & City Arcade."
                 />
             </Head>
 
-            <div className="min-h-screen bg-[#0B0D11] text-[#0E1013] selection:bg-amber-200 selection:text-black font-sans antialiased">
-                {/* 1. HERO SECTION (based on hero_section_design_ref.png with 3D Day/Night Hover Reveal) */}
+            <div className="min-h-screen bg-[#080A0E] text-white selection:bg-amber-300/30 selection:text-amber-100 font-sans antialiased">
+                {/* 1. HERO SECTION (Amāli Island 3D Villa & Hotel Showcase with Interactive Day/Night Reveal) */}
                 <div id="hero">
                     <HeroSection
                         onOpenEnquiry={() => handleOpenEnquiry('Villa Aurora Grande')}
                     />
                 </div>
 
-                {/* 2. BRAND HEADER & CITY ARCADE HEADLINE SECTION (based on design_ref.png) */}
-                <div id="brand-header">
+                {/* 2. BRAND STORY & CURATION SECTION (City Arcade Architectural Masterpiece) */}
+                <div id="brand-story">
                     <BrandHeaderSection
-                        onOpenEnquiry={() => handleOpenEnquiry('City Arcade Property')}
+                        onOpenEnquiry={() => handleOpenEnquiry('City Arcade Modular Suites')}
                     />
                 </div>
 
-                {/* 3. EDITORIAL MANIFESTO SECTION (staggered typography from design_ref.png) */}
+                {/* 3. EDITORIAL MANIFESTO SECTION (Cinematic staggered architectural typography) */}
                 <div id="manifesto">
                     <ManifestoSection />
                 </div>
 
-                {/* 4. 4-CARD FEATURE STACK & ARCHITECTURAL VISUAL (from design_ref.png) */}
+                {/* 4. 4-CARD FEATURE STACK & ARCHITECTURAL VISUAL (Intelligent Residence Platform) */}
                 <div id="features">
                     <FeatureCardsSection onCardClick={handleFeatureClick} />
                 </div>
 
-                {/* 5. "WHY CITY ARCADE?" SHOWCASE & VALUE PROPOSITION (from design_ref.png) */}
+                {/* 5. "WHY CITY ARCADE?" DISTINCTION & MASTERPIECE COLLECTION */}
                 <div id="why-us">
                     <WhyChooseUsSection
                         onOpenEnquiry={() => handleOpenEnquiry('Villa Aurora Masterpiece')}
